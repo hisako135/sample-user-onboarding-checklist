@@ -11,7 +11,7 @@
     <v-badge
       color="error"
       overlap>
-      <template v-slot:badge>0</template>
+      <template v-slot:badge>{{unDoneTodos}}</template>
       <v-btn
         color="primary"
         to="/checklist"
@@ -44,5 +44,10 @@ export default {
       this.$emit('slick')
     }
   },
+  computed: {
+    unDoneTodos() {
+      return this.$store.getters.unDoneTodosCount
+    }
+  }
 }
 </script>

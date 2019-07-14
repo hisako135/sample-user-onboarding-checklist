@@ -9,7 +9,7 @@
       <v-flex xs12 text-xs-center>
         <v-btn
           color="primary"
-          :disabled="state"
+          :disabled="this.$store.state.todos[0].done"
           @click="done">
           DONE
         </v-btn>
@@ -22,12 +22,9 @@
 <script>
   export default {
     name: "Page1",
-    data: () => ({
-      state: false,
-    }),
     methods: {
       done() {
-        return this.state = !this.state;
+        return this.$store.state.todos[0].done = !this.$store.state.todos[0].done;
       }
     }
   }
