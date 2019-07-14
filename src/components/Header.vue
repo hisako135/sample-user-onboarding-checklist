@@ -8,12 +8,17 @@
       <span>LOGO</span>
     </v-toolbar-title>
     <v-spacer></v-spacer>
-    <v-btn
-      color="primary"
-      to="/checklist"
-    >
-      <span>guide</span>
-    </v-btn>
+    <v-badge
+      color="error"
+      overlap>
+      <template v-slot:badge>0</template>
+      <v-btn
+        color="primary"
+        to="/checklist"
+      >
+        <span>guide</span>
+      </v-btn>
+    </v-badge>
     <v-btn
       flat
       href="https://github.com/vuetifyjs/vuetify/releases/latest"
