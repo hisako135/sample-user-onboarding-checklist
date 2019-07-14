@@ -45,7 +45,7 @@
     data :() => ({
       items: [
         { title: 'Home', icon: 'dashboard', link:"/" },
-        { title: 'About', icon: 'question_answer',link:"/about" }
+        { title: 'Page1', icon: 'question_answer',link:"/page1" }
       ],
       right: null
     }),
