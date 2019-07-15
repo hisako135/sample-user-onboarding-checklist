@@ -14,14 +14,14 @@
       href="https://github.com/vuetifyjs/vuetify/releases/latest"
       target="_blank"
     >
-      <span>setting</span>
+      <span>help</span>
     </v-btn>
     <v-btn
       flat
       href="https://github.com/vuetifyjs/vuetify/releases/latest"
       target="_blank"
     >
-      <span>account</span>
+      <span>settings</span>
     </v-btn>
   </v-toolbar>
 </template>

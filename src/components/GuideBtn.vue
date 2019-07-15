@@ -1,41 +1,64 @@
 <template>
   <v-badge
+    v-if="todoCount <= 4 && unDoneTodosCount >= 1"
     color="error"
     overlap
+    ref="badgeAnim"
     :class={animation:animation}>
     <template v-slot:badge>{{unDoneTodosCount}}</template>
     <v-btn
       color="primary"
       to="/checklist"
     >
-      <span>guide</span>
+      <span>setup guide</span>
     </v-btn>
   </v-badge>
+  <v-btn
+    v-else
+    color="primary"
+    to="/checklist"
+  >
+    <span>setup guide</span>
+  </v-btn>
 </template>
 
 <script>
-import { setInterval } from 'timers';
 export default {
   name: 'GuideBtn',
   data: () => ({
     animation: false
   }),
   computed: {
+    todoCount() {
+      return Object.keys(this.$store.state.todos).length
+    },
     unDoneTodosCount() {
       return this.$store.getters.unDoneTodosCount
     }
   },
   watch: {
     unDoneTodosCount() {
-      this.addAnimation()
+      this.addAnimationClass()
     }
   },
+  mounted() {
+    this.$refs.badgeAnim.$el.addEventListener(
+      'animationend',
+      this.removeAnimationClass
+    )
+  },
+  destroyed: function () {
+    this.$refs.badgeAnim.$el.removeEventListener(
+      'animationend',
+      this.removeAnimationClass   
+    )
+  },
   methods: {
-    addAnimation() {
-      return setInterval(this.animation = true, 1000)
+    addAnimationClass() {
+      this.animation = true
     },
-    animationState() {
-      return this.animation = true;
+    removeAnimationClass() {
+      this.animation = false
     }
   }
 }
@@ -47,11 +70,6 @@ export default {
 }
 
 @keyframes hoverShake {
-  /* 0% {transform: skew(0deg,0deg);}
-  25% {transform: skew(2deg, 2deg);}
-  75% {transform: skew(-2deg, -2deg);}
-  100% {transform: skew(0deg,0deg);} */
-  0% {transform: translateY(0px);}
   25% {transform: translateY(-5px);}
   50% {transform: translateY(0px);}
   75% {transform: translateY(-2px);}

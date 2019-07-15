@@ -7,6 +7,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
+  animClass: false,
   todos: [
     {id: 1, text: 'Page1 Todo', done: false},
     {id: 2, text: 'Page2 Todo', done: false},
@@ -23,6 +24,9 @@ export default new Vuex.Store({
     },
     unDoneTodosCount: (state, getters) => {
         return getters.unDoneTodos.length
+    },
+    animClass: state => {
+      return state.animClass
     }
   }
 })

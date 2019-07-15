@@ -15,7 +15,7 @@
 
     <v-divider></v-divider>
 
-    <v-list dense class="pt-0">
+    <v-list class="pt-0">
       <v-list-tile
         v-for="item in items"
         :key="item.title"
@@ -44,13 +44,11 @@
     },
     data :() => ({
       items: [
-        { title: 'Home', icon: 'dashboard', link:"/" },
+        { title: 'Home', icon: 'home', link:"/" },
         { title: 'Page1', icon: 'flag',link:"/page1" },
         { title: 'Page2', icon: 'flag',link:"/page2" },
         { title: 'Page3', icon: 'flag',link:"/page3" },
-        { title: 'Page4', icon: 'flag',link:"/page4" },
-        { title: 'Page5', icon: 'flag',link:"/page5" },
-        { title: 'Page6', icon: 'flag',link:"/page6" },
+        { title: 'Page4', icon: 'flag',link:"/page4" }
       ],
       right: null
     }),

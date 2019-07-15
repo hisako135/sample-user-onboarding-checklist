@@ -7,7 +7,7 @@
     >
       <h1>Check List</h1>
       <v-flex xs12>
-        <p v-if="todoCount <= 4 && unDoneTodosCount >= 1">{{todoCount - unDoneTodosCount}}/{{todoCount}} 個の設定が完了しています。</p>
+        <p v-if="todoCount <= 4 && unDoneTodosCount >= 1">{{todoCount - unDoneTodosCount}}/{{todoCount}} 個の設定が完了しています。<br>詳細は<a href="">hogehogehoge</a></p>
         <p v-else>全ての設定が完了しました！</p>
         <v-list two-line>
           <template v-for="item in items">
@@ -24,6 +24,7 @@
                 <v-list-tile-sub-title>hogehogehoge</v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
+            <v-divider></v-divider>
           </template>
         </v-list>
       </v-flex>
