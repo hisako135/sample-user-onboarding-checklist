@@ -45,7 +45,12 @@
     data :() => ({
       items: [
         { title: 'Home', icon: 'dashboard', link:"/" },
-        { title: 'Page1', icon: 'question_answer',link:"/page1" }
+        { title: 'Page1', icon: 'flag',link:"/page1" },
+        { title: 'Page2', icon: 'flag',link:"/page2" },
+        { title: 'Page3', icon: 'flag',link:"/page3" },
+        { title: 'Page4', icon: 'flag',link:"/page4" },
+        { title: 'Page5', icon: 'flag',link:"/page5" },
+        { title: 'Page6', icon: 'flag',link:"/page6" },
       ],
       right: null
     }),

@@ -1,6 +1,6 @@
 <template>
   <v-toolbar
-    dark
+    light
     fixed
     app>
     <v-toolbar-side-icon @click.stop="alick"></v-toolbar-side-icon>
@@ -8,17 +8,7 @@
       <span>LOGO</span>
     </v-toolbar-title>
     <v-spacer></v-spacer>
-    <v-badge
-      color="error"
-      overlap>
-      <template v-slot:badge>{{unDoneTodos}}</template>
-      <v-btn
-        color="primary"
-        to="/checklist"
-      >
-        <span>guide</span>
-      </v-btn>
-    </v-badge>
+    <GuideBtn/>
     <v-btn
       flat
       href="https://github.com/vuetifyjs/vuetify/releases/latest"
@@ -37,16 +27,16 @@
 </template>
 
 <script>
+import GuideBtn from './GuideBtn'
+
 export default {
   name: 'Header',
+  components: {
+    GuideBtn
+  },
   methods: {
     alick() {
       this.$emit('slick')
-    }
-  },
-  computed: {
-    unDoneTodos() {
-      return this.$store.getters.unDoneTodosCount
     }
   }
 }

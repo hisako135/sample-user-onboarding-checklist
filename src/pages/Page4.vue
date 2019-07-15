@@ -4,11 +4,11 @@
     <v-layout
       wrap
     >
-      <h1>Page1</h1>
+      <h1>Page4</h1>
       <v-flex xs12 text-xs-center>
         <v-btn
           color="primary"
-          :disabled="this.$store.state.todos[0].done"
+          :disabled="this.$store.state.todos[3].done"
           @click="done">
           DONE
         </v-btn>
@@ -20,10 +20,10 @@
 
 <script>
   export default {
-    name: "Page1",
+    name: "Page4",
     methods: {
       done() {
-        return this.$store.state.todos[0].done = !this.$store.state.todos[0].done;
+        return this.$store.state.todos[3].done = !this.$store.state.todos[3].done;
       }
     }
   }
